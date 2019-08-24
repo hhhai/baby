@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+    inital-scale=1">
+    <title></title>
+    <!-- 引入4个文件，必须注意导入顺序-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <script src="../JS/jquery.min.js"></script>
+    <script src="../JS/popper.min.js"></script>
+    <script src="../JS/bootstrap.min.js"></script>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/comm.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+    <script src="js/router.js"> </script>
+   <script src="js/login.js"></script>
+   
+</head>
+<body class="bgcolor">
+<header>
+    <iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
+</header>
+<div class="container">
+    <div class="video">
+        <video src="img/1.mp4 " controls autoplay loop id="v1" class="video"></video>
+    </div>
+    <div class="hpreg">
+        <img class="pic1" src="img/pic1.png" />
+        <div>
+             <span class="font1 m-4">跟随宝宝的</span>
+             <br/>
+             <span class="font1 m-4">惊人发展</span>
+        </div>
+    </div>
+    <div class="btn">
+        <a href="01_login.html">
+             <button class="btn1">现在进入</button>
+        </a>
+    </div>
+    <div class=" search">
+        <form id="search_form" method="post" action="/">
+            <input type="text" id="s" value="Search" class="text1 p-3 " placeholder="Search"/>
+        </form>
+    </div>
+    <div class="details">
+        <h2>我们能帮你什么吗？</h2>
+        <ul class="details-applyt">
+            <li class="apply_img">
+                <a href="details01.html" class="apply">
+                    <img class="imgxq" src="img/xq1.png" alt=""/>
+                    <span class="textoverlay"> 尿布
+                   </span>
+                </a>
+            </li>
+            <li class="apply_img">
+                <a href="details02.html" class="apply">
+                    <img class="imgxq" src="img/xq2.png" alt=""/>
+                    <span class="textoverlay">睡觉</span>
+                </a>
+            </li>
+            <li class="apply_img">
+                <a href="details03.html" class="apply">
+                    <img class="imgxq" src="img/xq3.png" alt=""/>
+                    <span class="textoverlay">洗澡</span>
+                </a>
+            </li>
+            <li class="apply_img">
+                <a href="details04.html" class="apply">
+                    <img class="imgxq" src="img/xq4.png" alt=""/>
+                    <span class="textoverlay">食物</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    var vm=new Vue({
+        el:".container",
+        data:{
+
+        },
+     router
+    });
+</script>
+<footer>
+    <iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
+</footer>
+</body>
+</html>

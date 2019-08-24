@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 引入js -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- 引入css -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <!-- 引入01_login.css -->
+    <link rel="stylesheet" href="./css/01_login.css">
+    <!-- <script src="js/01_login.js"></script> -->
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+        <div id="app">
+                <h2 class="title">登录</h2>
+                <div >
+                   &nbsp; <input type="text" placeholder="请输入用户名"  v-model:value="user" >:用户名<br>
+                   <input type="password" :placeholder="请输入密码" v-model:value="upwd">:密码<br>	  
+                </div>
+               <button type="button" @click="login" > <a href="index.html">登录</a> </button>
+               
+           </div>
+        <script>
+  var vm=new Vue({
+			el:'#app',
+			data:{					
+					user:'',
+				    upwd:''
+			},
+      methods:{
+                login (e) {
+                      //获取用户名
+                      var u=window.user;
+                      //2：获取用户输入的密码
+                       var p=window.upwd;
+                   //3：创建正则表达式验证用户名和密码
+                 //3-12  字母数字
+                 var reg=/^[a-z0-9]{3,12}$/i;
+                 //4：用户验证失败 提示短消息
+                 if(!reg.test(u)){
+                     this.$toast("用户名格式不正确");
+                     return;//失败停止执行
+                 }
+                 //5：密码验证失败 提示短消息  
+                 if(!reg.test(p)){
+                     this.$toast("密码格式不正确");
+                     return;//失败停止执行
+                 }
+                 //6：发送ajax 请求 axios
+                 var url="login";
+                 var obj={uname:u,upwd:p}
+                 this.axios.get(url,{params:obj}).then(res=>{
+                 //7：获取服务器返回结果
+                // console.log(res);
+                 //7.1登录失败  提示
+                 if(res.data.code==-1){
+                     this.$toast("用户名和密码有误")
+                 }else{
+                  //7.2登录成功 跳转商品首页组件
+                  //vue中一个组件执行
+                  window.location.href='../登录/登录成功.html';
+                 }
+                }
+                 )
+              }
+          }
+        })
+  </script>
+</body>
+</html>

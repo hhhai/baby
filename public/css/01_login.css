@@ -1,0 +1,20 @@
+*{margin: 0;padding: 0;}
+
+body{font-family:  "宋体";background: url(images/2.jpg) no-repeat;background-size: 100%;}
+
+#app{width: 300px;height: 400px;margin:100px auto;text-align: center;background: rgba(50,50,50,.6);border-radius: 10px;}
+
+.title{line-height: 50px;color: white;border-bottom: 1px solid silver;}
+
+
+
+input{width: 170px;height: 34px;border-radius: 5px;color:black;
+ margin: 20px 0px;}
+
+span{font-size: 12px;color:silver;margin-left: -80px;}
+
+button{width: 170px;height: 36px;border-radius: 5px;background:#5B8020;border: 1px solid  silver;color: white;font-size: 18px;margin-top: -10px;cursor: pointer;
+margin-left:-40px ;}
+button a{
+    color:#fff;
+}
